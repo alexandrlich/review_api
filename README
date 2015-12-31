@@ -1,0 +1,39 @@
+************************************************************************************************************************
+Tests:
+************************************************************************************************************************
+Tests need to be run with another config files: -Dconfig.file=conf/test.conf
+
+
+************************************************************************************************************************
+Openshift:
+************************************************************************************************************************
+Journaling is disabled in mongo to reduce DB size.
+Use start hook to run the application:
+
+Make sure that play is installed on server.
+------------------------------------------------------------------------------------------------------------------------
+if ! [[ -d ${OPENSHIFT_DATA_DIR}play-2.2.2 ]]; then
+  curl -o ${OPENSHIFT_DATA_DIR}play-2.2.2.zip http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip
+  unzip ${OPENSHIFT_DATA_DIR}play-2.2.2.zip
+  rm ${OPENSHIFT_DATA_DIR}play-2.2.2.zip
+fi
+------------------------------------------------------------------------------------------------------------------------
+
+Create target dir.
+------------------------------------------------------------------------------------------------------------------------
+${OPENSHIFT_DATA_DIR}play-2.2.1/play clean compile stage
+------------------------------------------------------------------------------------------------------------------------
+
+Run script to launch application with port and address params.
+------------------------------------------------------------------------------------------------------------------------
+${OPENSHIFT_REPO_DIR}target/universal/stage/bin/reviyou -Dhttp.port=${OPENSHIFT_DIY_PORT} -Dhttp.address=${OPENSHIFT_DIY_IP}
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+============how to kill play manually ==============
+ps auxw | grep java
+#or 
+ps -u username 
+#(where username is done by running 'whoami')
+kill -9 processId

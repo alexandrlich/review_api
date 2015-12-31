@@ -1,0 +1,13 @@
+
+************************************************************************************************************************
+Tests:
+************************************************************************************************************************
+http://www.playframework.com/documentation/2.2.1/ScalaTest
+play ~test
+play ~test-quick
+Alex: if you want to run test only - use quotes, i.e. play "test-only xxxSpec"
+
+
+
+if you get future 5sec timeout locally - chanage it to 10 in your play folder:
+https://github.com/playframework/playframework/blob/2.2.x/framework/src/play-test/src/main/scala/play/api/test/Helpers.scala

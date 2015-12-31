@@ -1,0 +1,16 @@
+1.create and update all skills on prod with associated tags
+2.update tags and structure of nested tags on prod
+3.for all existing users add settings: {appSounds:true}
+
+
+
+db.skills.update(
+   { },
+   {
+      $set : {"tags": ["tv"]}
+   },false,true
+)
+
+I
+
+//todo: create index for  notifications

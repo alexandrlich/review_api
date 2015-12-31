@@ -1,0 +1,1 @@
+play debug -Dlogger.file=conf/logger.xml run

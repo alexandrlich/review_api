@@ -1,0 +1,151 @@
+#  (Higher priority routes first)
+# Home page(reverse routing is enabed! we should have one-to-one match from left to right and vice versa!)
+# all com.reviyou.services should have /api/1.2.2/rest mapping
+
+GET           /api/1.2.2/rest/testServiceGet                      com.reviyou.controllers.RestTest.testServiceGet
+POST          /api/1.2.2/rest/testServicePost                     com.reviyou.controllers.RestTest.testServicePost
+GET           /api/1.2.2/rest/testServiceGetSecured               com.reviyou.controllers.RestTest.testServiceGetSecured
+GET           /api/1.2.2/rest/version                             com.reviyou.controllers.RestTest.version
+#GET           /api/1.2.2/rest/newrelicCheck                       com.reviyou.controllers.RestTest.newrelicCheck
+
+
+
+#registration flows
+POST          /api/1.2.2/rest/signup                               com.reviyou.controllers.SignupController.signup
+POST          /api/1.2.2/rest/resetPassword                        com.reviyou.controllers.SignupController.resetPassword
+GET           /api/1.2.2/rest/signup/approve/:uid                  com.reviyou.controllers.SignupController.accountCreationApprovalClick(uid:String)
+GET           /api/1.2.2/rest/resetPassword/approve/:uid           com.reviyou.controllers.SignupController.accountPassResetApprovalClick(uid:String)
+POST          /api/1.2.2/rest/account/getToken                     com.reviyou.controllers.SecurityController.getToken
+GET          /api/1.2.2/rest/tokeninfo/:token                      com.reviyou.controllers.SecurityController.checkTokenActive(token:String)
+
+POST          /api/1.2.2/rest/login                               com.reviyou.controllers.LoginController.login
+GET           /api/1.2.2/rest/logout                              com.reviyou.controllers.LoginController.logout(user_id: String, user_token: String)
+POST           /api/1.2.2/rest/user/:user_id/terms_signed         com.reviyou.controllers.LoginController.signTerms(user_id: String)
+
+#user settings
+
+POST           /api/1.2.2/rest/user/:user_id/changeSettings       com.reviyou.controllers.UserController.saveSettingOption(user_id: String)
+
+
+
+
+#currently not used - disable on prod
+#POST        /image/upload                      com.reviyou.controllers.Images.upload()
+
+#used to serve images from gridfs to the mobile app
+#no need to do security check, also this is forwarder from  nginx only
+GET           /api/1.2.2/rest/image/:hash_name                    com.reviyou.controllers.Images.getAttachment(hash_name:String)
+
+
+
+
+# comments logic
+POST          /api/1.2.2/rest/comment/:profile_id                 com.reviyou.controllers.CommentController.save(profile_id: String)
+GET           /api/1.2.2/rest/comment/:profile_id                  com.reviyou.controllers.CommentController.getNew(profile_id: String, user_id: String, user_token: String, offset: Int ?= 0)
+DELETE        /api/1.2.2/rest/comment/:comment_id                  com.reviyou.controllers.CommentController.delete(comment_id: String, user_id:String)
+POST        /api/1.2.2/rest/comment2/vote                           com.reviyou.controllers.CommentController.vote
+POST        /api/1.2.2/rest/comment2/unvote                         com.reviyou.controllers.CommentController.unvote
+
+
+#Profiles
+GET           /api/1.2.2/rest/profile/:id                         com.reviyou.controllers.ProfileController.findById(id: String, user_id: String)
+GET           /api/1.2.2/rest/search                              com.reviyou.controllers.ProfileController.searchProfiles(query: String ?= "", tags:String, offset: Int ?= 0)
+POST          /api/1.2.2/rest/profile                             com.reviyou.controllers.ProfileController.createProfile
+POST          /api/1.2.2/rest/profile/:profile_id/skill           com.reviyou.controllers.ProfileController.addSkill(profile_id: String)
+POST          /api/1.2.2/rest/profile/:profile_id/job             com.reviyou.controllers.ProfileController.addJob(profile_id: String)
+DELETE        /api/1.2.2/rest/profile/:profile_id                 com.reviyou.controllers.ProfileController.delete(profile_id: String, user_id: String)
+
+GET          /api/1.2.2/rest/profile/approve/:uid                com.reviyou.controllers.ProfileController.approveProfile(uid:String)
+GET          /api/1.2.2/rest/profile/reject/:uid                com.reviyou.controllers.ProfileController.rejectProfile(uid:String)
+
+
+#get list of common skills(according to profile's tags)
+GET           /api/1.2.2/rest/skills                              com.reviyou.controllers.SkillController.getSkills(tags:String)
+
+#get list of common occupations
+GET           /api/1.2.2/rest/professions                         com.reviyou.controllers.ProfessionController.getProfessions
+
+#Popular profiles
+GET           /api/1.2.2/rest/popular                com.reviyou.controllers.ProfileController.popularWithoutCache(offset: Int ?= 0, tags: String)
+
+
+#Bookmark
+GET           /api/1.2.2/rest/bookmark                            com.reviyou.controllers.BookmarkController.getBookmarkedProfiles(user_id: String, offset: Int ?= 0)
+POST          /api/1.2.2/rest/bookmark/profile/:profile_id        com.reviyou.controllers.BookmarkController.add(profile_id: String)
+DELETE        /api/1.2.2/rest/bookmark/profile/:profile_id        com.reviyou.controllers.BookmarkController.remove(profile_id: String, user_id: String)
+
+
+
+#Vote for profiles and skills
+#disabled because of ios
+POST          /api/1.2.2/rest/vote/:profile_id                    com.reviyou.controllers.VoteController.generalVote(profile_id: String)
+POST          /api/1.2.2/rest/vote/:profile_id/:skill_id          com.reviyou.controllers.VoteController.skillVote(profile_id: String, skill_id: String)
+
+GET           /api/1.2.2/rest/votedProfiles                       com.reviyou.controllers.VoteController.getVotedProfiles(user_id: String,offset: Int ?= 0)
+PUT           /api/1.2.2/rest/hideVotedProfile/:profile_id        com.reviyou.controllers.VoteController.hideVotedProfile(profile_id:String)
+
+
+
+
+
+
+#Contact us tab(General)
+POST          /api/1.2.2/rest/feedback                            com.reviyou.controllers.FeedbackController.contactUs
+
+#contact us requests(Custom)
+POST          /api/1.2.2/rest/request/profile/:profile_id/skill                    com.reviyou.controllers.ContactUsController.addCustomSkill(profile_id: String)
+POST          /api/1.2.2/rest/request/delete_profile/:profile_id                    com.reviyou.controllers.ContactUsController.deleteProfile(profile_id: String)
+POST          /api/1.2.2/rest/request/profile/:profile_id/job                       com.reviyou.controllers.ContactUsController.addJob(profile_id: String)
+
+
+#share link
+GET           /api/1.2.2/share/:profile_id                                       com.reviyou.controllers.ShareController.share(profile_id: String)
+
+#Admin panel Page, not completed, disable on prod!
+#GET           /adminPanel                                       com.reviyou.controllers.AdminPanelController.index
+#GET           /adminPanel/login                                 com.reviyou.controllers.AdminPanelController.loginPage
+#POST          /adminPanel/login                                 com.reviyou.controllers.AdminPanelController.login
+
+
+
+
+#tags\interests
+GET           /api/1.2.2/rest/tags/search                              com.reviyou.controllers.TagController.searchTags(query: String ?= "")
+GET           /api/1.2.2/rest/tags                                     com.reviyou.controllers.TagController.get(offset: Int ?= 0)
+POST          /api/1.2.2/rest/user/:user_id/addTag                     com.reviyou.controllers.TagController.saveSelected(user_id:String)
+POST          /api/1.2.2/rest/user/:user_id/removeTags                  com.reviyou.controllers.TagController.deleteSelected(user_id:String)
+
+
+
+
+#notifications
+
+#internal trigger, no auth required, every 12 hours
+GET           /api/1.2.2/rest/notifications/trigger                    com.reviyou.controllers.NotificationsController.runGeneration
+
+GET           /api/1.2.2/rest/notifications                            com.reviyou.controllers.NotificationsController.getMyNotifications(user_id: String, user_token: String, offset: Int ?= 0)
+DELETE       /api/1.2.2/rest/notifications/remove/:notification_id                    com.reviyou.controllers.NotificationsController.remove(notification_id: String, user_id: String)
+PUT           /api/1.2.2/rest/notifications/ack/:notification_id                      com.reviyou.controllers.NotificationsController.ask(notification_id:String)
+
+GET           /api/1.2.2/rest/notifications/newCount                            com.reviyou.controllers.NotificationsController.getNewNotificationsCount(user_id: String)
+
+#push notifications server
+POST          /api/1.2.2/rest/pushNotification/register/                        com.reviyou.controllers.NotificationsController.registerPushNotification
+
+#mobile push notifications
+#internal trigger, no auth required, every 24 hours
+GET           /api/1.2.2/rest/pushNotifications/trigger                    com.reviyou.controllers.NotificationsController.pushRemoteNotifications
+
+
+
+#todo: add save selected interest preferences for user, get user's preferences during login
+
+
+
+########### DEPRECATED SECTION #############
+#news(deprecated, remove after REST 1.2.2 is no longer supported)
+GET           /api/1.2.2/rest/news                              com.reviyou.controllers.NewsController.getNews
+GET           /api/1.2.2/rest/news/check_recent                  com.reviyou.controllers.NewsController.checkRecentNews
+POST          /api/1.2.2/rest/user/:user_id/removeTag                  com.reviyou.controllers.TagController.deleteSelectedDeprecated(user_id:String)
+############################################
+

@@ -1,0 +1,303 @@
+html,
+body,
+#wrapper,
+#header {
+  background-color: transparent;
+}
+body.home.page #wrapper #main {
+  background: #f4f6f8;
+  position: relative;
+}
+body #wrapper #header-sticky.sticky-header .sticky-shadow {
+  background: url('http://reviyou.com/wp-content/uploads/2014/11/header.png') center center repeat;
+}
+body #wrapper .ls-wp-fullwidth-container .custom-slider-content-wrapper > p {
+  display: inline-block;
+  font-size: 22px;
+  max-width: 300px;
+  line-height: 34px;
+  color: #8c529b;
+  vertical-align: middle;
+}
+
+body #wrapper #content .custom-fullwidth-absolute-block {
+  position: absolute!important;
+  z-index: 1!important;
+  width: 100%;
+  right: 0;
+}
+
+
+body #wrapper #content .post-content > div {
+  position: relative;
+  z-index: 2;
+}
+body #wrapper #content .post-content .avada-row p {
+  line-height: 30px;
+  font-size: 20px;
+}
+body #wrapper .main-title {
+  color: #462657!important;
+  font-size: 38px!important;
+  line-height: 38px!important;
+}
+body #wrapper .contentPart {
+ --background-color: #ffffff;
+}
+body #wrapper .logo {
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+body #wrapper #nav.nav-holder .navigation,
+body #wrapper #sticky-nav.nav-holder .navigation {
+  overflow: hidden;
+}
+body #wrapper #nav.nav-holder .navigation > li,
+body #wrapper #sticky-nav.nav-holder .navigation > li {
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  padding: 0 15px;
+}
+body #wrapper #nav.nav-holder .navigation > li:hover,
+body #wrapper #sticky-nav.nav-holder .navigation > li:hover,
+body #wrapper #nav.nav-holder .navigation > li.current-menu-item,
+body #wrapper #sticky-nav.nav-holder .navigation > li.current-menu-item {
+  border-color: #6a5574;
+  background: url('http://reviyou.com/wp-content/uploads/2013/01/nav_top_hover_bg.png') center center repeat;
+  text-align: center;
+}
+body #wrapper #nav.nav-holder .navigation > li > a,
+body #wrapper #sticky-nav.nav-holder .navigation > li > a {
+  height: 74px;
+  border: none;
+  line-height: 74px;
+}
+body #wrapper .sidebar {
+  border: 1px solid #8c529b;
+  position: relative;
+  z-index: 2;
+}
+body #wrapper .sidebar .widget {
+  margin-bottom: 0;
+}
+body #wrapper .sidebar .fusion-tabs {
+  padding: 0 0 20px;
+  margin-bottom: 0px!important;
+  border-bottom: none;
+}
+body #wrapper .sidebar .fusion-tabs .nav ul {
+  border: none;
+}
+body #wrapper .sidebar .fusion-tabs .nav ul > li.active > a,
+body #wrapper .sidebar .fusion-tabs .nav ul > li > a:hover {
+  border-top: 3px solid #8c529b;
+}
+body #wrapper .sidebar .fusion-tabs .nav ul > li > a {
+  padding-bottom: 11px;
+  line-height: 32px;
+  font-size: 18px;
+}
+body #wrapper .sidebar .fusion-tabs .tab-content .tab-pane {
+  border: none;
+  overflow: hidden!important;
+}
+body #wrapper .sidebar .fusion-tabs .tab-content .tab-pane .heading {
+  padding: 20px 5px;
+  margin: 0 0 10px;
+}
+body #wrapper .sidebar .fusion-tabs .tab-content .tab-pane .heading h3 {
+  margin: 0;
+  line-height: 24px;
+  font-size: 18px;
+  text-align: center;
+}
+body #wrapper .sidebar .fusion-tabs .tab-content .tab-pane .twitter-box {
+  padding-left: 10px;
+}
+body #wrapper .sidebar .fusion-tabs .tab-content .tab-pane .twitter-box .tweets-container a:hover {
+  color: #BFBFBF!important;
+  text-decoration: underline;
+}
+body #wrapper .download-buttons-title-container .download-buttons-title {
+  border-bottom: none;
+  height: 42px;
+  display: block;
+  text-align: center;
+}
+body #wrapper .download-buttons-title-container .download-buttons-title h5 {
+  text-align: center!important;
+  font-size: 36px!important;
+  float: none!important;
+  line-height: 36px!important;
+  display: inline;
+}
+body #wrapper .download-buttons-container {
+  text-align: center;
+  display: block;
+  width: 430px;
+  margin: 0 auto 50px;
+}
+body #wrapper .download-buttons-container .download-button {
+  background: #fff!important;
+  width: 88px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px!important;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: #8c529b;
+}
+body #wrapper .download-buttons-container .download-button:hover {
+  background: #8c529b!important;
+}
+body #wrapper .download-buttons-container .download-button:hover > i {
+  color: #fff!important;
+  text-shadow: 0 1px 0 #fff!important;
+  border-color: #fff;
+}
+body #wrapper .download-buttons-container .download-button > i {
+  color: #8c529b!important;
+  text-shadow: 0 1px 0 #8c529b!important;
+}
+body #wrapper .download-buttons-container .download-button:last-child {
+  float: right;
+}
+body #wrapper .paralax-container {
+  position: relative;
+  margin: 30px 0;
+  height: 300px;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper {
+  position: relative;
+  height: 300px;
+  z-index: 4;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .main-title {
+  color: #fff!important;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0 0;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container {
+  position: relative;
+  margin: 0 25%;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container label {
+  color: #fff;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container p {
+  margin-bottom: 25px!important;
+  text-align: center;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container p > input {
+  border-radius: 5px!important;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+  width: 250px;
+  display: inline-block;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container p > input:focus {
+  border-color: #707070;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container .submit-button-container {
+  text-align: center;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container .submit-button-container input[type=submit] {
+  background: #fff!important;
+  width: 108px;
+  color: #888888;
+  border: 1px solid #888888;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px!important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+body #wrapper .paralax-container .mc4wp-form-wrapper .mc4wp-form-container .submit-button-container input[type=submit]:hover {
+  color: #333!important;
+}
+body #wrapper #screen-sliders-container {
+  background: transparent;
+}
+body #wrapper #screen-sliders-container .tab-content {
+  height: 365px;
+}
+body #wrapper #screen-sliders-container .nav {
+  text-align: center;
+  background: transparent;
+  margin-bottom: 20px;
+}
+body #wrapper #screen-sliders-container .nav > ul {
+  width: 90%;
+  margin: 20px auto;
+  display: inline-block;
+  border: none;
+  height: 30px;
+  background: transparent;
+}
+body #wrapper #screen-sliders-container .nav > ul > li {
+  border: 1px solid #8c529b;
+  display: inline-block;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  margin: 0 20px;
+  width: 140px;
+}
+body #wrapper #screen-sliders-container .nav > ul > li.active,
+body #wrapper #screen-sliders-container .nav > ul > li:hover {
+  --background: #8c529b;
+}
+body #wrapper #screen-sliders-container .nav > ul > li.active > a,
+body #wrapper #screen-sliders-container .nav > ul > li:hover > a {
+  color: #fff;
+}
+body #wrapper #screen-sliders-container .nav > ul > li > a {
+  color: #8c529b;
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+body #wrapper #screen-sliders-container .nav,
+body #wrapper #screen-sliders-container .tab-pane,
+body #wrapper #screen-sliders-container .tab-pane {
+  border: none;
+  background: transparent;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-nav span {
+  border-radius: 50%;
+  border: 1px solid #888;
+  color: #888!important;
+  background: transparent;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-nav span:before {
+  color: #888!important;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-nav span:hover {
+  border-color: #8c529b;
+  color: #8c529b!important;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-carousel {
+  height: 320px;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-carousel .caroufredsel_wrapper {
+  height: 320px!important;
+}
+body #wrapper #screen-sliders-container .es-carousel-wrapper .es-carousel .caroufredsel_wrapper > ul > li {
+  box-shadow: 0px 30px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+[fusion_text]<script type="text/javascript">// <![CDATA[
+!function(e){return e?void e(function(){var i=["#facebook-like-widget-2","#tweets-widget-2","#flickr-widget-2"],t=e("#social-media-tabs").find(".tab-pane"),a=0;e(t).each(function(){var t=e(i[a++]);e(this).append(t)})}):!1}(jQuery);
+// ]]></script>[/fusion_text]

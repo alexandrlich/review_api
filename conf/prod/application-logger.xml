@@ -1,0 +1,78 @@
+<configuration scan="true">
+    <jmxConfigurator />
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/logs/application.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${application.home}/logs/application.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%coloredLevel %logger{15} - %message%n%xException{5}</pattern>
+        </encoder>
+    </appender>
+
+       <logger name="akka://mongodb-akka" level="INFO" />
+		<logger name="application" level="INFO" additivity="false">
+            <!--
+            <appender-ref ref="STDOUT"/>
+            -->
+				<appender-ref ref="FILE"/>
+		</logger>
+
+    <logger name="com.reviyou" level="INFO" />
+
+		<logger name="play" level="INFO" additivity="false">
+            <!--
+            <appender-ref ref="STDOUT"/>
+            -->
+			<appender-ref ref="FILE"/>
+		</logger>
+	<!--
+
+    <logger name="play.modules.reactivemongo" level="DEBUG" additivity="false"/>
+-->
+    <!-- Off these ones as they are annoying, and anyway we manage configuration ourself -->
+    <logger name="com.avaje.ebean.config.PropertyMapLoader" level="INFO" />
+    <logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="INFO" />
+    <logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="INFO" />
+    <logger name="com.gargoylesoftware.htmlunit.javascript" level="INFO" />
+
+    <logger name="play.modules.reactivemongo" level="INFO" />
+
+
+
+    <logger name="akka" level="INFO" />
+<!--
+    <logger name="net.sf.ehcache" level="INFO"/>
+    -->
+    <logger name="net.sf.ehcache.pool.impl.DefaultSizeOfEngine" level="ERROR"/>
+    <logger name="net.sf.ehcache.config" level="WARN"/>
+    <logger name="net.sf.ehcache.distribution" level="WARN"/>
+    <logger name="net.sf.ehcache.code" level="WARN"/>
+
+
+    <!-- additivity=false ensures access log data only goes to the access log -->
+
+        <logger name="access" level="INFO" additivity="false">
+        <appender-ref ref="ACCESS_FILE" />
+    </logger>
+
+		<root level="ERROR" additivity="false">
+
+            <appender-ref ref="FILE" />
+<!--
+            <appender-ref ref="STDOUT" />
+            -->
+        </root>
+
+</configuration>

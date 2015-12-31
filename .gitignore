@@ -1,0 +1,20 @@
+project/.idea
+project/project
+project/target
+#target #commented for deploying to openshift
+tmp
+target
+.target/
+.idea
+.idea/*
+.idea_modules/*
+logs
+.history
+dist
+bin*
+.settings
+.cache
+.classpath
+.project
+/.idea_modules/
+/out/

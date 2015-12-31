@@ -1,0 +1,36 @@
+@(loginForm: Form[(String, String)])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Login Admin Panel</title>
+    </head>
+    <body>
+        <div class="container">
+            @* TODO:com.routes.controllers woudn't work since we have custom packages now. Needs to be another way..
+            @form(routes.controllers.AdminPanelController.login) {
+
+                @inputText(loginForm("user_name"), args =
+                    'placeholder -> "Your name",
+                    '_label -> "User Name",
+                    'id -> "user_name"
+                )
+                @inputText(loginForm("password"), args =
+                    'placeholder -> "Your password",
+                    '_label -> "Password",
+                    'id -> "password",
+                    'type -> "password"
+                )
+
+                <input type="submit" value="Log in">
+            }
+            *@
+        </div>
+
+    </body>
+</html>

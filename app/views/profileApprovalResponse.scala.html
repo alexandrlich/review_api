@@ -1,0 +1,46 @@
+@(approve: Boolean,profileId: String)
+@email{
+
+<table width="100%" border="0"
+       cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td height="20"></td>
+    </tr>
+    <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif,Trebuchet MS;font-size:30px;line-height:32px;color:#000000;text-align:center">
+            <strong>
+                <div style="text-align:center,color:#ffffff,font-size:20px">
+
+
+                    <div><span style="font-size:14px">
+               @if(approve) {
+        Profile has been approved successfully!
+        To view an approved profile use the following link from your mobile device:
+
+        <a href="http://reviyou.com/share/@profileId">Reviyou</a>
+    } else {
+        Profile has been rejected. You can create a new profile for this user and request once again.
+    }
+                    </span></div>
+
+                </div>
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td height="20"></td>
+    </tr>
+    <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif,Trebuchet MS;font-size:15px;line-height:24px;color:#ffffff;text-align:center"></td>
+    </tr>
+    <tr>
+        <td height="30"></td>
+    </tr>
+    <tr>
+        <td height="100"></td>
+    </tr>
+    </tbody>
+</table>
+
+}

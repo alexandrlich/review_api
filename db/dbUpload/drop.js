@@ -1,0 +1,15 @@
+db.profileImage.chunks.drop();
+db.profileImage.files.drop();
+db.feedbacks.drop();
+db.professions.drop();
+db.votes.drop();
+db.bookmarks.drop();
+db.news.drop();
+db.comments.drop();
+db.profileVisitors.drop();
+db.profiles.drop();
+db.skills.drop();
+db.professions.drop();
+db.users_history.drop();
+db.users.drop();
+db.contact_us.drop();

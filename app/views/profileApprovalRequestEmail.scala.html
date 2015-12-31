@@ -1,0 +1,26 @@
+@(owner: com.reviyou.models.UserModel, profile: com.reviyou.models.dto.ProfileRequest, uid: String)
+@import play.api.Play.current
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+    Hello @profile.name,
+
+
+    You received this email because @owner.first_name @owner.last_name wants you
+    to approve your new created profile by using the following link:
+
+    <a href="@current.configuration.getString("web.apirest")/profile/approve/@uid">Approve</a>
+
+    To reject profile use the other link:
+    <a href="@current.configuration.getString("web.apirest")/profile/reject/@uid">Reject</a>
+
+
+
+    By clicking "approve" you agree with <a href="http://reviyou.com/terms_and_privacy/"> terms and conditions</a> of <a href="http://www.reviyou.com">Reviyou Inc </a>. Check our our website for more information.
+</body>
+</html>
+
